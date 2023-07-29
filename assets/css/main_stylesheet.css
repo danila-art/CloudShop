@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Придумать стиль для шапки */
+
+
+/* Стиль для item */
+.container {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: auto;
+    margin: 5% auto;
+}
+.container__item {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 4% auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 15px;
+}
+.item__title {
+}
+.container__item-rating {
+}
+.container__item-desk {
+}
