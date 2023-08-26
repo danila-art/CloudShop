@@ -1,0 +1,50 @@
+СТРОКА 1: alter table goods add desc text;
+                                ^
+cloudshop=# ALTER TABLE goods ADD desc TEXT;
+ERROR:  syntax error at or near "desc"
+СТРОКА 1: ALTER TABLE goods ADD desc TEXT;
+                                ^
+cloudshop=# \dt
+          Список отношений
+ Схема  |  Имя  |   Тип   | Владелец
+--------+-------+---------+----------
+ public | goods | таблица | postgres
+(1 строка)
+
+
+cloudshop=# select * from goods;
+ id |   title    | grade | price | cover
+----+------------+-------+-------+-------
+  1 | Клавиатура | 3.4   |   350 |
+(1 строка)
+
+
+cloudshop=# alter table goods add desc varchar(255);
+ERROR:  syntax error at or near "desc"
+СТРОКА 1: alter table goods add desc varchar(255);
+                                ^
+cloudshop=# alter table goods add desc(text);
+ERROR:  syntax error at or near "desc"
+СТРОКА 1: alter table goods add desc(text);
+                                ^
+cloudshop=# DROP TABLE goods;
+DROP TABLE
+cloudshop=# create table goods (id serial primary key, title varchar(60),desc TEXT ,grade varchar(30), price int, cover text);
+ERROR:  syntax error at or near "desc"
+СТРОКА 1: ...e goods (id serial primary key, title varchar(60),desc TEXT ...
+                                                               ^
+cloudshop=# create table goods (id serial primary key, title varchar(60),description TEXT ,grade varchar(30), price int, cover text);
+CREATE TABLE
+cloudshop=# insert into goods (title, grade, price, cover) VALUES ('Клавиатура','Клавиатра среднего качества приемлимая по цене','3.4',350,'');
+ERROR:  INSERT has more expressions than target columns
+СТРОКА 1: ...авиатра среднего качества приемлимая по цене','3.4',350,'');
+                                                                     ^
+cloudshop=# insert into goods (title,description ,grade, price, cover) VALUES ('Клавиатура','Клавиатра среднего качества приемлимая по цене','3.4',350,'');
+INSERT 0 1
+cloudshop=# select * from goods
+cloudshop-# ;
+ id |   title    |                  description                   | grade | price | cover
+----+------------+------------------------------------------------+-------+-------+-------
+  1 | Клавиатура | Клавиатра среднего качества приемлимая по цене | 3.4   |   350 |
+(1 строка)
+

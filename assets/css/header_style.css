@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.header__home {
+    display: block;
+    position: relative;
+}
+.header__profile {
+    display: block;
+    position: relative;
+}

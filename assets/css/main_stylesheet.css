@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -17,6 +17,7 @@
     height: auto;
     margin: 5% auto;
 }
+
 .container__item {
     display: block;
     position: relative;
@@ -27,9 +28,48 @@
     border-radius: 20px;
     padding: 15px;
 }
+
+.item__flex-container {
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.item__flex-1 {
+    display: block;
+    position: relative;
+}
+
 .item__title {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 5vh;
 }
-.container__item-rating {
-}
+
 .container__item-desk {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 5vh;
+}
+
+.item__flex-2 {
+    display: block;
+    position: relative;
+}
+
+.container__item-rating {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 5vh;
+}
+
+.item__price {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 5vh;
 }
