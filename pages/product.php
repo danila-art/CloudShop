@@ -1,5 +1,10 @@
 <?
-session_start()
+session_start();
+$id = $_GET['id'];
+var_dump($id);
+require '../php/db.php';
+$product = select('SELECT * FROM goods WHERE id == :id', ['id' => $id]);
+var_dump($product);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +17,5 @@ session_start()
 </head>
 <body>
     <?require '../modules/header.php'?>
-
 </body>
 </html>
