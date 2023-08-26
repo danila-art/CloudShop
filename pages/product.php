@@ -3,7 +3,7 @@ session_start();
 $id = $_GET['id'];
 var_dump($id);
 require '../php/db.php';
-$product = select('SELECT * FROM goods WHERE id == :id', ['id' => $id]);
+$product = select('SELECT * FROM goods WHERE id = :id', ['id' => $id]);
 var_dump($product);
 ?>
 <!DOCTYPE html>
